@@ -16,11 +16,13 @@ namespace parser.Interfaces.Models
 
         public Organization? Owner { get; set; }
 
-        public int LimitPeopleForTeams { get; set; }
+        public int MinLimitPeopleForTeams { get; set; }
 
-        public DateTimeOffset? DateStart { get; set; }
+        public int MaxLimitPeopleForTeams { get; set; }
 
-        public DateTimeOffset? DateEnd { get; set; }
+        public DateTime? DateStart { get; set; }
+
+        public DateTime? DateEnd { get; set; }
 
         public HackType HackType { get; set; }
 
