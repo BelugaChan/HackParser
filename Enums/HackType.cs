@@ -4,6 +4,7 @@ namespace parser.Enums
     {
         Online,
         Offine,
-        Hybrid
+        Hybrid,
+        NoInfo
     }
 }
