@@ -1,10 +1,18 @@
-﻿// See https://aka.ms/new-console-template for more information
-using parser.Models;
+﻿using parser.Models;
 using PuppeteerSharp;
 using parser.Parsers;
 using parser.Factory;
+using parser.Handlers;
+using parser.Interfaces.Handlers;
 
-HackFactory hackFactory = new HackFactory();
-HackParser<Hack> hackParser = new(hackFactory);
-var res = await hackParser.ScrapHacks("123");
+public class Program
+{
+    static async Task Main(string[] args)
+    {
+        HackFactory hackFactory = new HackFactory();
+        IInnerTextHandler textHandler = new InnerTextHandlerForCodeNRock();
+        HackParser<Hack> hackParser = new(hackFactory, textHandler);
+        var res = await hackParser.ScrapHacks("123");
+    }
+}
 
